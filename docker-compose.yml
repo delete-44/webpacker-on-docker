@@ -23,9 +23,11 @@ services:
       - RACK_ENV=development
       - POSTGRES_USER=rails
       - POSTGRES_PASSWORD=secret123
+      - WEBPACKER_DEV_SERVER_HOST=webpack
     volumes:
       - .:/usr/src/app
     depends_on:
+      - webpack
       - db
 
   webpack:
